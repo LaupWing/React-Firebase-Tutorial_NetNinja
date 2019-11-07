@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {createProject} from '../../store/actions/projectActions'
+import {connect} from 'react-redux'
 
 class CreateProject extends Component {
     state={
@@ -7,7 +9,7 @@ class CreateProject extends Component {
     }
     handelSubmit= (e)=>{
         e.preventDefault()
-        console.log(this.state)
+        this.props.createProject(this.state)
     }
     handelChange= (e)=>{
         this.setState({
@@ -36,4 +38,10 @@ class CreateProject extends Component {
     }
 }
 
-export default CreateProject
+const mapDispatchActions = (dispatch)=>{
+    return{
+        createProject: (project)=>dispatch(createProject(project))
+    }
+}
+
+export default connect(null,mapDispatchActions)(CreateProject) // second is actions that why there is a null there

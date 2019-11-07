@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ProjectDetails = (props) => {
-    console.log(props.match.params)
     const {id} = props.match.params
 
     return (
