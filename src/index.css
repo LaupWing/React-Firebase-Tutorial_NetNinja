@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  min-height: 100%;
+  min-height: 100vh;
   background: url(https://source.unsplash.com/1600x900/?mario);
   background-repeat: no-repeat;
   background-size: cover;
