@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {createProject} from '../../store/actions/projectActions'
 import {connect} from 'react-redux'
-
+import {Redirect} from 'react-router-dom'
 class CreateProject extends Component {
     state={
         title: '',
@@ -17,6 +17,10 @@ class CreateProject extends Component {
         })
     }
     render() {
+        const {auth} = this.props 
+        if(!auth.uid){
+            return <Redirect to='/signIn'/>
+        }
         return (
             <div className="container">
                 <form onSubmit={this.handelSubmit} className="white">
@@ -44,4 +48,10 @@ const mapDispatchActions = (dispatch)=>{
     }
 }
 
-export default connect(null,mapDispatchActions)(CreateProject) // second is actions that why there is a null there
+const mapStateToProps = (state)=>{
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchActions)(CreateProject) // second is actions that why there is a null there
