@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-family: sans-serif;
   min-height: 100%;
+  background: url(https://source.unsplash.com/1600x900/?mario);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 form{
@@ -25,4 +28,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
     color: #ec407a !important;
+}
+.project-details{
+    background: white;
+    margin-top: 50px;
 }
