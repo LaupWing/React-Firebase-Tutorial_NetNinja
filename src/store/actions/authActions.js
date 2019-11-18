@@ -28,3 +28,9 @@ export const signOut = ()=>{
             })
     }
 }
+
+export const signUp = ()=>{
+    return (dispatch, getState, {getFirebase, getFirestore})=>{
+
+    }
+}
